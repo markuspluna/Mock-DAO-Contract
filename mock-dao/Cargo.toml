@@ -1,0 +1,27 @@
+[package]
+name = "mock-dao"
+version = "0.0.0"
+authors = ["Stellar Development Foundation <info@stellar.org>"]
+license = "Apache-2.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["rlib"]
+doctest = false
+
+[features]
+testutils = [
+    "soroban-sdk/testutils",
+]
+
+[dependencies]
+soroban-sdk = {  workspace = true }
+
+[dev_dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+rand = { version = "0.7.3" }
+
+
+
+
